@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"time"
 )
@@ -11,6 +12,7 @@ func main() {
 	fileName := os.Args[1]
 	file, err := os.Open(fileName)
 	if err != nil {
+		fmt.Println("USAGE: ./chip8 [input rom]")
 		return
 	}
 	ticker := time.NewTicker(1 * time.Microsecond)
